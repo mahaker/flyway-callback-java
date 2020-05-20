@@ -1,6 +1,7 @@
 plugins {
     id 'java'
     id 'application'
+    id "org.flywaydb.flyway" version "6.4.2"
 }
 
 group 'org.example'
@@ -10,10 +11,17 @@ sourceCompatibility = 11
 
 mainClassName = 'sample.Main'
 
+flyway {
+    url = 'jdbc:postgresql://localhost:5432/exampledb'
+    user = 'postgres'
+    password = 'example'
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
     testCompile group: 'junit', name: 'junit', version: '4.12'
 }

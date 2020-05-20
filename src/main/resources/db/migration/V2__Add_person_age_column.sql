@@ -1,0 +1,5 @@
+ALTER TABLE
+  PERSON
+ADD COLUMN
+  AGE int not null
+;
