@@ -16,6 +16,7 @@ flyway {
     user = 'postgres'
     password = 'example'
     locations = ['filesystem:./src/main/resources/db/migration/', 'classpath:db/migration']
+    callbacks = [ 'db.migration.FillTestData' ]
 }
 
 repositories {
@@ -23,5 +24,6 @@ repositories {
 }
 
 dependencies {
+    compile "org.flywaydb:flyway-core:6.4.2"
     compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
 }
