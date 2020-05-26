@@ -1,13 +1,14 @@
 package db.migration;
 
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
 
 import org.flywaydb.core.api.callback.Callback;
 import org.flywaydb.core.api.callback.Context;
 import org.flywaydb.core.api.callback.Event;
 
 public class FillTestData implements Callback {
+
+    public FillTestData() {}
 
     @Override
     public boolean supports(Event event, Context context) {
