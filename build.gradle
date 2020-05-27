@@ -12,7 +12,7 @@ sourceCompatibility = 11
 mainClassName = 'sample.Main'
 
 flyway {
-    url = 'jdbc:postgresql://localhost:5432/exampledb'
+    url = 'jdbc:postgresql://localhost:15432/exampledb'
     user = 'postgres'
     password = 'example'
     locations = ['filesystem:./src/main/resources/db/migration/', 'classpath:db/migration']
