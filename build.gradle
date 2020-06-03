@@ -15,7 +15,7 @@ flyway {
     url = 'jdbc:postgresql://localhost:15432/exampledb'
     user = 'postgres'
     password = 'example'
-    locations = ['filesystem:./src/main/resources/db/migration/', 'classpath:db/migration']
+    locations = [ 'filesystem:./src/main/resources/db/migration/' ]
     callbacks = [ 'db.migration.FillTestData' ]
 }
 
@@ -27,3 +27,6 @@ dependencies {
     compile "org.flywaydb:flyway-core:6.4.2"
     compile group: 'org.postgresql', name: 'postgresql', version: '42.1.4'
 }
+
+flywayClean.dependsOn(classes)
+flywayMigrate.dependsOn(classes)
