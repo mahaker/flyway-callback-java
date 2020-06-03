@@ -8,8 +8,6 @@ import org.flywaydb.core.api.callback.Event;
 
 public class FillTestData implements Callback {
 
-    public FillTestData() {}
-
     @Override
     public boolean supports(Event event, Context context) {
         return Event.AFTER_MIGRATE.equals(event);
